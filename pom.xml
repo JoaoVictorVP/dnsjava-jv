@@ -5,7 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>dnsjava-jv</groupId>
-    <artifactId>dnsjava</artifactId>
+    <artifactId>dnsjava-jv</artifactId>
     <packaging>bundle</packaging>
     <version>3.6.2-SNAPSHOT</version>
     <name>dnsjava</name>
@@ -27,9 +27,9 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:https://github.com/dnsjava/dnsjava</connection>
-        <developerConnection>scm:git:https://github.com/dnsjava/dnsjava</developerConnection>
-        <url>https://github.com/dnsjava/dnsjava</url>
+        <connection>scm:git:https://github.com/JoaoVictorVP/dnsjava-jv</connection>
+        <developerConnection>scm:git:https://github.com/JoaoVictorVP/dnsjava-jv</developerConnection>
+        <url>https://github.com/JoaoVictorVP/dnsjava-jv</url>
         <tag>HEAD</tag>
     </scm>
     <developers>
@@ -54,38 +54,10 @@
         <jna.version>5.11.0</jna.version>
         <bouncycastle.version>1.71</bouncycastle.version>
         <vertx.version>4.2.7</vertx.version>
-
-        <sonar.projectKey>dnsjava_dnsjava</sonar.projectKey>
-        <sonar.organization>dnsjava</sonar.organization>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.java.source>${target.jdk}</sonar.java.source>
-        <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco/jacoco.xml
-        </sonar.coverage.jacoco.xmlReportPaths>
     </properties>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>3.0.1</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <gpgArguments>
-                        <arg>--pinentry-mode</arg>
-                        <arg>loopback</arg>
-                    </gpgArguments>
-                </configuration>
-            </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -190,19 +162,6 @@
                         <phase>verify</phase>
                         <goals>
                             <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>com.coveo</groupId>
-                <artifactId>fmt-maven-plugin</artifactId>
-                <version>2.9.1</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>check</goal>
                         </goals>
                     </execution>
                 </executions>
